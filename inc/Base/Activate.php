@@ -3,10 +3,11 @@
 /**
  * @package GhuertePlugin
  */
+namespace Inc;
 
- class GhuertePluginDeactivate
+ class Activate
  {
-     public static function deactivate() {
+     public static function activate() {
          flush_rewrite_rules();
      }
  }

@@ -1,0 +1,19 @@
+{
+    "name": "ghuerte/ghuerte-plugin",
+    "description": "Starter Plugin Example",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Gabriel Jay Huerte",
+            "email": "gabriel.hu@ibinex.tech"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Inc\\": "./inc"
+        }
+    }
+}
