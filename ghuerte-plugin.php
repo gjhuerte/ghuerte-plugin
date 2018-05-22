@@ -41,10 +41,29 @@ if( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
 	require_once dirname( __FILE__ ) . '/vendor/autoload.php' ;
 }
 
-define( 'PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-define( 'PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'PLUGIN', plugin_basename( __FILE__ ) );
+/**
+ * The code that runs during activation
+ *
+ * @return void
+ */
+function activate_ghuerte_plugin() {
+	Inc\Base\Activate::activate();
+}
+register_activation_hook( __FILE__, 'activate_ghuerte_plugin');
 
+/**
+ * The code that runs during deactivation
+ *
+ * @return void
+ */
+function deactivate_ghuerte_plugin() {
+	Inc\Base\Deactivate::deactivate();
+}
+register_deactivation_hook( __FILE__, 'deactivate_ghuerte_plugin');
+
+/**
+ * Initialize plugin core
+ */
 if( class_exists( 'Inc\\Init' ) ){
 
 	/**
